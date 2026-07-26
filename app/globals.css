@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 8% 5%;
+    --foreground: 40 20% 96%;
+
+    --card: 228 12% 8%;
+    --card-foreground: 40 20% 96%;
+
+    --popover: 228 12% 8%;
+    --popover-foreground: 40 20% 96%;
+
+    --primary: 16 100% 61%;
+    --primary-foreground: 20 20% 8%;
+
+    --secondary: 225 12% 13%;
+    --secondary-foreground: 40 20% 96%;
+
+    --muted: 225 12% 13%;
+    --muted-foreground: 220 6% 62%;
+
+    --accent: 225 12% 16%;
+    --accent-foreground: 40 20% 96%;
+
+    --destructive: 4 78% 56%;
+    --destructive-foreground: 40 20% 96%;
+
+    --border: 225 12% 16%;
+    --input: 225 12% 16%;
+    --ring: 16 100% 61%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 8% 5%;
+    --foreground: 40 20% 96%;
+    --card: 228 12% 8%;
+    --card-foreground: 40 20% 96%;
+    --popover: 228 12% 8%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 16 100% 61%;
+    --primary-foreground: 20 20% 8%;
+    --secondary: 225 12% 13%;
+    --secondary-foreground: 40 20% 96%;
+    --muted: 225 12% 13%;
+    --muted-foreground: 220 6% 62%;
+    --accent: 225 12% 16%;
+    --accent-foreground: 40 20% 96%;
+    --destructive: 4 78% 56%;
+    --destructive-foreground: 40 20% 96%;
+    --border: 225 12% 16%;
+    --input: 225 12% 16%;
+    --ring: 16 100% 61%;
+  }
+
+  .light {
+    --background: 40 33% 97%;
+    --foreground: 228 14% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 228 14% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 14% 10%;
+
+    --primary: 16 100% 55%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 228 14% 10%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 228 8% 40%;
+
+    --accent: 40 25% 90%;
+    --accent-foreground: 228 14% 10%;
+
+    --destructive: 4 78% 48%;
+    --destructive-foreground: 40 20% 98%;
+
+    --border: 40 15% 87%;
+    --input: 40 15% 87%;
+    --ring: 16 100% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  ::selection {
+    background-color: rgba(255, 107, 53, 0.3);
+  }
+
+  :focus-visible {
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .heat-bar-track {
+    @apply relative h-2 w-full overflow-hidden rounded-full bg-graphite-700;
+  }
+  .heat-bar-fill {
+    @apply h-full rounded-full bg-heat-gradient bg-[length:220%_100%] transition-[width] duration-700 ease-out;
+  }
+  .glass-panel {
+    @apply border border-white/5 bg-white/[0.03] backdrop-blur-xl;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .prose-chat p {
+    @apply mb-2 last:mb-0;
+  }
+  .prose-chat code {
+    @apply rounded bg-white/10 px-1 py-0.5 font-mono text-[12px];
+  }
+  .prose-chat pre {
+    @apply overflow-x-auto rounded-lg bg-graphite-900 p-3;
+  }
+  .prose-chat ul {
+    @apply list-disc pl-5;
+  }
+  .prose-chat ol {
+    @apply list-decimal pl-5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
